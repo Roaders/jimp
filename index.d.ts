@@ -66,25 +66,25 @@ declare class Jimp {
      * Read an image from a file.
      * @param src - The path to the file containing the file data.
      */
-    static read(src: string): Jimp.Promise<Jimp>;
+    static read(src: string): Promise<Jimp>;
     /**
      * Read an image from a file.
      * @param src - The path to the file containing the file data.
      * @param cb - A callback function when the file is read.
      */
-    static read(src: string, cb: Jimp.Callback<Jimp>): Jimp.Promise<Jimp>;
+    static read(src: string, cb: Jimp.Callback<Jimp>): Promise<Jimp>;
 
     /**
      * Read an image from a Buffer.
      * @param data - A Buffer containing the file data.
      */
-    static read(data: Buffer): Jimp.Promise<Jimp>;
+    static read(data: Buffer): Promise<Jimp>;
     /**
      * Read an image from a Buffer.
      * @param data - A Buffer containing the file data.
      * @param cb - A callback function when the file is read.
      */
-    static read(data: Buffer, cb: Jimp.Callback<Jimp>): Jimp.Promise<Jimp>;
+    static read(data: Buffer, cb: Jimp.Callback<Jimp>): Promise<Jimp>;
 
     //#endregion
 
@@ -911,20 +911,6 @@ declare namespace Jimp {
         width: number;
         /** The height of the image in pixels. */
         height: number;
-    }
-
-    /** @internal Thenable Interface */
-    export interface Thenable<T> {
-        then<U>(onFulfilled: (val: T) => (U | Thenable<U>)): Thenable<U>;
-        then<U>(onFulfilled: (val: T) => (U | Thenable<U>), onRejected: (err: Error) => (U | Thenable<U>)): Thenable<U>;
-    }
-    
-    /** @internal Promise Interface */
-    export interface Promise<T> extends Thenable<T> {
-        then<U>(onFulfilled: (val: T) => (U | Thenable<U>)): Promise<U>;
-        then<U>(onFulfilled: (val: T) => (U | Thenable<U>), onRejected: (err: Error) => (U | Thenable<U>)): Promise<U>;
-        
-        catch<U>(onRejected: (err: Error) => (U | Thenable<U>)): Promise<U>;
     }
 }
 
