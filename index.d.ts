@@ -915,9 +915,3 @@ declare namespace Jimp {
 }
 
 export = Jimp;
-
-declare global {
-    interface NodeRequireFunction {
-        (id: "jimp"): typeof Jimp;
-    }
-}
