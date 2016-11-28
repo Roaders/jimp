@@ -776,6 +776,64 @@ declare class Jimp {
     resize(w: number, h: number, mode: string, cb: Jimp.Callback<Jimp>): any;
 
     /**
+     * Uniformly scales the image by a factor.
+     * @param f the factor to scale the image by
+     * @returns this for chaining of methods.
+     */
+    scale(f: number): this;
+    /**
+     * Uniformly scales the image by a factor.
+     * @param f the factor to scale the image by
+     * @param cb - A callback for when complete.
+     */
+    scale(f: number, cb: Jimp.Callback<Jimp>): any;
+    /**
+     * Uniformly scales the image by a factor.
+     * @param f the factor to scale the image by
+     * @param mode - The resize mode.
+     * @returns this for chaining of methods.
+     */
+    scale(f: number, mode: string): this;
+    /**
+     * Uniformly scales the image by a factor.
+     * @param f the factor to scale the image by
+     * @param mode - The resize mode.
+     * @param cb - A callback for when complete.
+     */
+    scale(f: number, mode: string, cb: Jimp.Callback<Jimp>): any;
+
+    /**
+     * Scale the image to the largest size that fits inside the rectangle that has the given width and height.
+     * @param w the width to resize the image to
+     * @param h the height to resize the image to
+     * @returns this for chaining of methods.
+     */
+    scaleToFit(w: number, h: number): this;
+    /**
+     * Scale the image to the largest size that fits inside the rectangle that has the given width and height.
+     * @param w the width to resize the image to
+     * @param h the height to resize the image to
+     * @param cb - A callback for when complete.
+     */
+    scaleToFit(w: number, h: number, cb: Jimp.Callback<Jimp>): any;
+    /**
+     * Scale the image to the largest size that fits inside the rectangle that has the given width and height.
+     * @param w the width to resize the image to
+     * @param h the height to resize the image to
+     * @param mode - The resize mode.
+     * @returns this for chaining of methods.
+     */
+    scaleToFit(w: number, h: number, mode: string): this;
+    /**
+     * Scale the image to the largest size that fits inside the rectangle that has the given width and height.
+     * @param w the width to resize the image to
+     * @param h the height to resize the image to
+     * @param mode - The resize mode.
+     * @param cb - A callback for when complete.
+     */
+    scaleToFit(w: number, h: number, mode: string, cb: Jimp.Callback<Jimp>): any;
+
+    /**
      * Scale the image so that it fills the given width and height. Some parts of the image may be clipped.
      * @param w - The width to resize the image to.
      * @param h - The height to resize the image to.
@@ -865,6 +923,14 @@ declare class Jimp {
      * @returns this for chaining of methods
      */
     getBuffer(mime: string, cb: Jimp.Callback<Buffer>): this;
+
+    /**
+     * Converts the image to a base 64 string
+     * @param mime - The mime type of the image buffer to be created
+     * @param cb - A Node-style function to call with the buffer as the second argument
+     * @returns this for chaining of methods
+     */
+    getBase64(mime: string, cb: Jimp.Callback<Buffer>): this;
 
     /**
      * Writes the image to a file.
